@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "362d7616-ac9d-4530-8fc2-bc8e16131bcf",
+		"name": "crisp bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12179134"
+	},
+	"item": [
+		{
+			"name": "{{local_bookstore_url}}/books/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{local_bookstore_url}}/books/",
+					"host": [
+						"{{local_bookstore_url}}"
+					],
+					"path": [
+						"books",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List out all books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{local_bookstore_url}}/books/",
+							"host": [
+								"{{local_bookstore_url}}"
+							],
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "pkglication/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:57:25 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "340"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"ID\": 1,\n        \"CreatedAt\": \"2022-09-09T01:52:03+03:00\",\n        \"UpdatedAt\": \"2022-09-09T01:52:03+03:00\",\n        \"DeletedAt\": null,\n        \"name\": \"\",\n        \"author\": \"\",\n        \"publication\": \"\"\n    },\n    {\n        \"ID\": 2,\n        \"CreatedAt\": \"2022-09-09T01:56:17+03:00\",\n        \"UpdatedAt\": \"2022-09-09T01:56:17+03:00\",\n        \"DeletedAt\": null,\n        \"name\": \"Pub2\",\n        \"author\": \"Tofunmi okedeji\",\n        \"publication\": \" this is my second Publication\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Pub3\",\n    \"Author\": \"Tofunmi okedeji\",\n    \"Publication\":\" this is my third Publication\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_bookstore_url}}/book/",
+					"host": [
+						"{{local_bookstore_url}}"
+					],
+					"path": [
+						"book",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create book success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"Pub2\",\n    \"Author\": \"Tofunmi okedeji\",\n    \"Publication\":\" this is my second Publication\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_bookstore_url}}/book/",
+							"host": [
+								"{{local_bookstore_url}}"
+							],
+							"path": [
+								"book",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "pkglication/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 22:56:16 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "213"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ID\": 2,\n    \"CreatedAt\": \"2022-09-09T01:56:16.811016704+03:00\",\n    \"UpdatedAt\": \"2022-09-09T01:56:16.811016704+03:00\",\n    \"DeletedAt\": null,\n    \"name\": \"Pub2\",\n    \"author\": \"Tofunmi okedeji\",\n    \"publication\": \" this is my second Publication\"\n}"
+				}
+			]
+		},
+		{
+			"name": "{{local_bookstore_url}}/book/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local_bookstore_url}}/book/2",
+					"host": [
+						"{{local_bookstore_url}}"
+					],
+					"path": [
+						"book",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get book details",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_bookstore_url}}/book/2",
+							"host": [
+								"{{local_bookstore_url}}"
+							],
+							"path": [
+								"book",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "pkglication/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 23:00:19 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "193"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ID\": 2,\n    \"CreatedAt\": \"2022-09-09T01:56:17+03:00\",\n    \"UpdatedAt\": \"2022-09-09T01:56:17+03:00\",\n    \"DeletedAt\": null,\n    \"name\": \"Pub2\",\n    \"author\": \"Tofunmi okedeji\",\n    \"publication\": \" this is my second Publication\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Pub22\",\n    \"Author\": \"Tofunmi okedeji\",\n    \"Publication\":\" this is my twenty second Publication\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local_bookstore_url}}/book/1",
+					"host": [
+						"{{local_bookstore_url}}"
+					],
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit book successful",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Name\": \"Pub22\",\n    \"Author\": \"Tofunmi okedeji\",\n    \"Publication\":\" this is my twenty second Publication\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_bookstore_url}}/book/1",
+							"host": [
+								"{{local_bookstore_url}}"
+							],
+							"path": [
+								"book",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "pkglication/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 23:01:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"ID\": 1,\n    \"CreatedAt\": \"2022-09-09T01:52:03+03:00\",\n    \"UpdatedAt\": \"2022-09-09T02:01:43.944213241+03:00\",\n    \"DeletedAt\": null,\n    \"name\": \"Pub22\",\n    \"author\": \"Tofunmi okedeji\",\n    \"publication\": \" this is my twenty second Publication\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local_bookstore_url}}/book/3",
+					"host": [
+						"{{local_bookstore_url}}"
+					],
+					"path": [
+						"book",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Book success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_bookstore_url}}/book/3",
+							"host": [
+								"{{local_bookstore_url}}"
+							],
+							"path": [
+								"book",
+								"3"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "pkglication/json"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 23:03:41 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
